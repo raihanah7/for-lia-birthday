@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Love Ya Like A Sister', cursive;
+  overflow-x: hidden;
+
+  background-image: url("assets/bg.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.glass-box {
+  width: 98%;
+  min-height: 92vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 25px;
+
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 38px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+}
+
+.text-box {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.line {
+  color: #fff0f6;
+  font-size: 135px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 0.95;
+  margin-bottom: 18px;
+
+  text-shadow:
+    3px 3px 0 rgba(143, 90, 100, 0.45),
+    0 0 18px rgba(255, 240, 246, 0.85);
+
+  opacity: 0;
+  transform: translateY(45px);
+  animation: spawnUp 1.2s ease forwards;
+}
+
+.line1 {
+  animation-delay: 0.4s;
+}
+
+.line2 {
+  animation-delay: 1.1s;
+}
+
+.line3 {
+  animation-delay: 1.8s;
+}
+
+.photo-box {
+  width: 62vw;
+  max-width: 1100px;
+  min-height: 86vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.face {
+  width: min(62vw, 1080px);
+  max-height: 84vh;
+  object-fit: contain;
+
+  opacity: 0;
+  transform: translateY(55px) scale(0.9);
+  animation: photoSpawn 1.3s ease forwards;
+  animation-delay: 2.7s;
+}
+
+button {
+  margin-top: 8px;
+  padding: 7px 20px;
+
+  border: 1px solid #fff0f6;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+
+  color: #fff0f6;
+  font-size: 15px;
+  cursor: pointer;
+
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 4s;
+  backdrop-filter: blur(2px);
+}
+
+button:hover {
+  background: rgba(255, 240, 246, 0.22);
+}
+
+@keyframes spawnUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes photoSpawn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    padding: 12px;
+  }
+
+  .glass-box {
+    flex-direction: column;
+    gap: 5px;
+    padding: 25px 15px;
+    width: 96%;
+    min-height: auto;
+
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .line {
+    font-size: 72px;
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+
+  .photo-box {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .face {
+    width: 95vw;
+    max-height: 65vh;
+  }
+}
+.page2 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.memory-box {
+  width: 98%;
+  min-height: 92vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px 55px;
+
+  background: rgba(0, 0, 0, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 38px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+}
+
+.love-text {
+  width: 48%;
+  color: #fff0f6;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 24px;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+  text-align: left;
+
+  opacity: 0;
+  transform: translateY(45px);
+  animation: spawnUp 1.3s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.love-text p {
+  margin-bottom: 22px;
+}
+
+.love-text .last-line {
+  color: #ffd6e8;
+  font-size: 28px;
+  font-style: italic;
+  text-shadow: 0 0 12px rgba(255, 214, 232, 0.7);
+}
+
+.photo-collage {
+  width: 48%;
+  height: 650px;
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(45px);
+  animation: photoSpawn 1.3s ease forwards;
+  animation-delay: 1.2s;
+}
+
+.polaroid {
+  position: absolute;
+  width: 255px;
+  height: 315px;
+  object-fit: cover;
+
+  background: #ffffff;
+  padding: 10px 10px 42px;
+  border-radius: 3px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
+  transition: 0.3s ease;
+}
+
+.polaroid:hover {
+  transform: scale(1.05) rotate(0deg);
+  z-index: 10;
+}
+
+.p1 {
+  top: 30px;
+  left: 60px;
+  transform: rotate(-9deg);
+}
+
+.p2 {
+  top: 20px;
+  right: 70px;
+  transform: rotate(7deg);
+}
+
+.p3 {
+  bottom: 40px;
+  left: 110px;
+  transform: rotate(8deg);
+}
+
+.p4 {
+  bottom: 70px;
+  right: 110px;
+  transform: rotate(-7deg);
+}
+
+@media (max-width: 1000px) {
+  .memory-box {
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px 18px;
+    min-height: auto;
+  }
+
+  .love-text {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .love-text .last-line {
+    font-size: 22px;
+  }
+
+  .photo-collage {
+    width: 100%;
+    height: 620px;
+  }
+
+  .polaroid {
+    width: 190px;
+    height: 245px;
+  }
+
+  .p1 {
+    top: 20px;
+    left: 20px;
+  }
+
+  .p2 {
+    top: 40px;
+    right: 20px;
+  }
+
+  .p3 {
+    bottom: 60px;
+    left: 35px;
+  }
+
+  .p4 {
+    bottom: 35px;
+    right: 35px;
+  }
+}
